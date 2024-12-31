@@ -1,0 +1,18 @@
+To solve this issue, ensure that your CSS selectors are specific enough to override conflicting styles.  In this case, we'll add an ID to the div to make it more specific.
+
+```css
+/* external.css */
+div { color: blue; }
+
+/* internal.css */
+<style>
+div { color: green; }
+</style>
+
+<div id="myDiv" style="color: red;">This is a div.</div>
+
+/* solution.css */
+#myDiv { color: yellow; } 
+```
+
+By adding the ID selector `#myDiv`, we make the rule in `solution.css` the most specific, ensuring that the text color is yellow.
