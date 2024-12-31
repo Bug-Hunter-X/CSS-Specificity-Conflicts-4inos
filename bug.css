@@ -1,0 +1,12 @@
+The CSS specificity rules can lead to unexpected behavior if not carefully managed.  For example, consider a situation where you have an inline style, an internal style sheet rule, and an external style sheet rule all targeting the same element with the same property but different values.
+
+```css
+/* external.css */
+div { color: blue; }
+
+/* internal.css */
+<style>
+div { color: green; }
+</style>
+
+<div style="color: red;">This is a div.</div>
